@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Briefcase, Calendar } from "lucide-react";
 
 const experiences = [
   {
@@ -21,10 +22,20 @@ const experiences = [
   {
     company: "Scaler School of Technology",
     position: "Software Development Intern",
-    duration: "2020",
+    role: "Freelance Internship",
+    duration: "June 2024 - October 2024",
     description:
-      "Contributed to the development of educational technology solutions. Worked on frontend development using React and backend integration with Node.js. Participated in agile development processes and collaborated with cross-functional teams.",
+      "Developed my own portfolio without code for showcasing my skills and learnings. Also developed a Chrome Extension and worked on personal branding on LinkedIn.",
     skills: ["React", "Node.js", "JavaScript", "Git", "Agile"],
+  },
+  {
+    company: "Edunet Foundation",
+    position: "AI Intern",
+    role: "AI Transformative Learning with TechSaksham",
+    duration: "December 2024 - January 2025",
+    description:
+      "Focused on research and development of AI-driven solutions, particularly in natural language processing and predictive modeling. Gained experience in deploying models to production and fine-tuning for real-world applications.",
+    skills: ["Python", "Natural Language Processing", "Predictive Modeling", "Machine Learning"],
   },
   {
     company: "ML Research Lab",
@@ -74,22 +85,43 @@ const Experience = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-8 p-6 bg-gray-50 rounded-lg">
+          <div className="lg:col-span-8">
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className={`transition-all duration-300 ${
+                className={`p-6 bg-gray-900 rounded-lg text-white transition-all duration-300 ${
                   activeTab === index ? "opacity-100" : "opacity-0 hidden"
                 }`}
               >
-                <h3 className="text-xl font-semibold mb-1">{exp.position}</h3>
-                <p className="text-primary mb-4">{exp.company}</p>
-                <p className="text-gray-600 mb-6">{exp.description}</p>
+                <h3 className="text-2xl font-bold mb-4">
+                  {`Internship at ${exp.company}`}
+                </h3>
+                
+                {exp.role && (
+                  <div className="mb-4 flex items-start">
+                    <Briefcase className="mr-2 text-primary h-5 w-5 mt-1" />
+                    <div>
+                      <span className="font-semibold text-white/80">Role:</span>{" "}
+                      <span>{exp.role}</span>
+                    </div>
+                  </div>
+                )}
+                
+                <div className="mb-6 flex items-start">
+                  <Calendar className="mr-2 text-primary h-5 w-5 mt-1" />
+                  <div>
+                    <span className="font-semibold text-white/80">Duration:</span>{" "}
+                    <span>{exp.duration}</span>
+                  </div>
+                </div>
+                
+                <p className="text-white/90 mb-6">{exp.description}</p>
+                
                 <div className="flex flex-wrap gap-2">
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-white text-gray-700 text-sm rounded-full border border-gray-200"
+                      className="px-3 py-1 bg-gray-800 text-primary text-sm rounded-full border border-primary/30"
                     >
                       {skill}
                     </span>
