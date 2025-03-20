@@ -40,7 +40,7 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className="">
         <div className="container mx-auto px-4 py-20 bg-slate-50">
-          <nav className="flex flex-col gap-8 items-center text-xl">
+          <nav className="flex flex-col gap-8 items-center text-xl bg-slate-50">
             <NavLinks onClick={() => setIsMenuOpen(false)} />
           </nav>
         </div>
