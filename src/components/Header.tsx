@@ -75,6 +75,13 @@ const NavLinks = ({ onClick }: { onClick?: () => void }) => {
         About
       </a>
       <a
+        href="#skills"
+        className="hover:text-primary transition-colors"
+        onClick={onClick}
+      >
+        My Expertise
+      </a>
+      <a
         href="#projects"
         className="hover:text-primary transition-colors"
         onClick={onClick}

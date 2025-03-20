@@ -19,6 +19,14 @@ const experiences = [
     skills: ["JavaScript", "React", "Node.js", "MongoDB", "PostgreSQL"],
   },
   {
+    company: "Scaler School of Technology",
+    position: "Software Development Intern",
+    duration: "2020",
+    description:
+      "Contributed to the development of educational technology solutions. Worked on frontend development using React and backend integration with Node.js. Participated in agile development processes and collaborated with cross-functional teams.",
+    skills: ["React", "Node.js", "JavaScript", "Git", "Agile"],
+  },
+  {
     company: "ML Research Lab",
     position: "Machine Learning Intern",
     duration: "2019 - 2020",
