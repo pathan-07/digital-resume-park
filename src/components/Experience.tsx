@@ -94,7 +94,7 @@ const Experience = () => {
                 }`}
               >
                 <h3 className="text-2xl font-bold mb-4">
-                  {`Internship at ${exp.company}`}
+                  {exp.position}
                 </h3>
                 
                 {exp.role && (
