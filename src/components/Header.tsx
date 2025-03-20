@@ -38,8 +38,8 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-white z-40 transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"} md:hidden`}>
-        <div className="container mx-auto px-4 py-20 bg-slate-300">
+      <div className="">
+        <div className="container mx-auto px-4 py-20 bg-slate-50">
           <nav className="flex flex-col gap-8 items-center text-xl">
             <NavLinks onClick={() => setIsMenuOpen(false)} />
           </nav>
