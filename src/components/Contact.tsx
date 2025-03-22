@@ -38,7 +38,7 @@ const Contact = () => {
           <span className="inline-block px-3 py-1 mb-4 text-sm bg-primary/10 text-primary rounded-full font-medium">
             Contact
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Get In Touch</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Have a question or want to work together? Feel free to reach out to me.
           </p>
