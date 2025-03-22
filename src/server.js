@@ -9,16 +9,32 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-app.post('/api/contact', (req, res) => {
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
+});
+
+app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
   
-  // Here you can add code to:
-  // 1. Save to a database
-  // 2. Send an email
-  // 3. Store in a file
-  console.log('Received message:', { name, email, message });
-  
-  res.json({ success: true, message: 'Message received!' });
+  try {
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `New Contact Form Message from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    });
+    
+    res.json({ success: true, message: 'Message sent successfully!' });
+  } catch (error) {
+    console.error('Email error:', error);
+    res.status(500).json({ success: false, message: 'Failed to send message' });
+  }
 });
 
 app.listen(port, '0.0.0.0', () => {
