@@ -6,7 +6,8 @@ const projects = [
   {
     id: "diabetes-prediction",
     title: "Diabetes Prediction App",
-    description: "This project involves building a predictive model to diagnose diabetes based on various health metrics. The model uses logistic regression to classify individuals as diabetic or non-diabetic based on their medical attributes.",
+    description:
+      "This project involves building a predictive model to diagnose diabetes based on various health metrics. The model uses logistic regression to classify individuals as diabetic or non-diabetic based on their medical attributes.",
     image: "/uploads/diabeteies.png",
     tags: ["Python", "Machine Learning", "Data Visualization"],
     liveLink: "https://first-python-project.onrender.com",
@@ -15,7 +16,8 @@ const projects = [
   {
     id: "car-price-prediction",
     title: "Car Price Prediction Model",
-    description: "A data analysis tool that predicts car prices based on various features and market trends.",
+    description:
+      "A data analysis tool that predicts car prices based on various features and market trends.",
     image: "/uploads/car.png",
     tags: ["Data Analysis", "Machine Learning", "Python"],
     liveLink: "https://car-price-prediction-model.onrender.com",
@@ -24,7 +26,8 @@ const projects = [
   {
     id: "ipl-predictor",
     title: "IPL Win Predictor",
-    description: "The IPL Win Predictor Model predicts the outcomes of Indian Premier League (IPL) matches using historical data and real-time match information. It provides accurate win probabilities for competing teams with dynamic visualizations and accurate data analysis.",
+    description:
+      "The IPL Win Predictor Model predicts the outcomes of Indian Premier League (IPL) matches using historical data and real-time match information. It provides accurate win probabilities for competing teams with dynamic visualizations and accurate data analysis.",
     image: "/uploads/ipl.png",
     tags: ["Streamlit", "Data Science", "Python", "Machine Learning"],
     liveLink: "https://ipl-prediction-model-.onrender.com",
@@ -33,7 +36,8 @@ const projects = [
   {
     id: "breast-cancer-detection",
     title: "Breast Cancer Detection Model",
-    description: "Developed and deployed a deep learning model for breast cancer detection using TensorFlow. The model leverages key features to predict malignancy with high accuracy, though deployment on Render's free tier presented challenges due to VRAM limitations.",
+    description:
+      "Developed and deployed a deep learning model for breast cancer detection using TensorFlow. The model leverages key features to predict malignancy with high accuracy, though deployment on Render's free tier presented challenges due to VRAM limitations.",
     image: "/uploads/cancer.png",
     tags: ["Healthcare", "Machine Learning", "Image Analysis"],
     liveLink: "https://cancer-prediction-model.onrender.com",
@@ -42,8 +46,9 @@ const projects = [
   {
     id: "Chrome Extension",
     title: "Chrome Plugin (Extension)",
-    description: "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
-    image: "/uploads/chrome.png",
+    description:
+      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
+    image: "/uploads/c1.png",
     tags: ["Chrome Extension", "Web Development", "JavaScript"],
     liveLink: "https://github.com/pathan-07/time-Tracker-Chrome-Plug-in-",
     repoLink: "https://github.com/pathan-07/time-Tracker-Chrome-Plug-in-",
@@ -51,17 +56,27 @@ const projects = [
   {
     id: "Marketing 101",
     title: "Marketing 101",
-    description: "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
-    image: "/uploads/market.png",
+    description:
+      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
+    image: "/uploads/market.jpeg",
     tags: ["Canva", "Graphics", "Design"],
     ConnectME: "https://www.linkedin.com/in/pathan-mo-faizan-khan/",
   },
   {
     id: "Sms Spam Detection",
     title: "SMS SPAM DETECTION Using NLP",
-    description: "Developed an AI-powered SMS spam detection system that leverages Natural Language Processing and TF-IDF vectorization to accurately classify messages as spam or legitimate. The project features a secure web interface with registration and OTP-based login to ensure robust user authentication.",
+    description:
+      "Developed an AI-powered SMS spam detection system that leverages Natural Language Processing and TF-IDF vectorization to accurately classify messages as spam or legitimate. The project features a secure web interface with registration and OTP-based login to ensure robust user authentication.",
     image: "/uploads/nlp.png",
-    tags: ["Python", "NLTK", "NLP", "Web Application" , "HTML", "CSS", "JavaScript"],
+    tags: [
+      "Python",
+      "NLTK",
+      "NLP",
+      "Web Application",
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
     liveLink: "https://sms-spam-detect.onrender.com",
     repoLink: "https://github.com/pathan-07/SMS-SPAM-DETECTION-USING-NLP",
   },
@@ -82,7 +97,7 @@ const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState<number>(6);
 
   const loadMoreProjects = () => {
-    setVisibleProjects(prev => Math.min(prev + 6, projects.length));
+    setVisibleProjects((prev) => Math.min(prev + 6, projects.length));
   };
 
   return (
@@ -96,7 +111,8 @@ const Projects = () => {
             My Latest Work
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore my recent projects that showcase my skills and expertise in  and Different Technologies.
+            Explore my recent projects that showcase my skills and expertise in
+            and Different Technologies.
           </p>
         </div>
 
@@ -137,7 +153,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
-    <div 
+    <div
       className="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 reveal"
       style={{ transitionDelay: `${index * 100}ms` }}
     >
