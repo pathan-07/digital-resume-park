@@ -94,10 +94,10 @@ interface Project {
 }
 
 const Projects = () => {
-  const [visibleProjects, setVisibleProjects] = useState<number>(6);
+  const [visibleProjects, setVisibleProjects] = useState<number>(3);
 
   const loadMoreProjects = () => {
-    setVisibleProjects((prev) => Math.min(prev + 6, projects.length));
+    setVisibleProjects((prev) => Math.min(prev + 3, projects.length));
   };
 
   return (
