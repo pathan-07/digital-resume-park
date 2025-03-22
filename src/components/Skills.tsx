@@ -13,10 +13,15 @@ const Skills = () => {
 
   // Function to determine which skills to display based on active category
   const getDisplayedSkills = () => {
-    if (activeCategory === "all") {
-      return Object.values(allSkills).flat();
-    }
-    return allSkills[activeCategory as keyof typeof allSkills] || [];
+    let skills = activeCategory === "all" 
+      ? Object.values(allSkills).flat()
+      : allSkills[activeCategory as keyof typeof allSkills] || [];
+    
+    // Deduplicate skills and add category prefix to make keys unique
+    return [...new Set(skills)].map(skill => ({
+      id: `${activeCategory}-${skill}`,
+      name: skill
+    }));
   };
 
   return (
@@ -91,13 +96,13 @@ const Skills = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 reveal">
           {getDisplayedSkills().map((skill) => (
             <div
-              key={skill}
+              key={skill.id}
               className="flex flex-col items-center p-6 bg-gray-900 rounded-lg text-center transition-all hover:transform hover:scale-105"
             >
               <div className="w-16 h-16 mb-4 flex items-center justify-center">
-                {getSkillIcon(skill)}
+                {getSkillIcon(skill.name)}
               </div>
-              <h3 className="text-white font-medium">{skill}</h3>
+              <h3 className="text-white font-medium">{skill.name}</h3>
             </div>
           ))}
         </div>
