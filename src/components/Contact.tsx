@@ -11,7 +11,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -22,10 +22,10 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:3000/api/contact', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -38,7 +38,7 @@ const Contact = () => {
       }
     } catch (error) {
       toast.error("Failed to send message");
-      console.error('Error:', error);
+      console.error("Error:", error);
     } finally {
       setIsSubmitting(false);
     }
@@ -51,9 +51,12 @@ const Contact = () => {
           <span className="inline-block px-3 py-1 mb-4 text-sm bg-primary/10 text-primary rounded-full font-medium">
             Contact
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
+            Get In Touch
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to reach out to me.
+            Have a question or want to work together? Feel free to reach out to
+            me.
           </p>
         </div>
 
@@ -61,7 +64,8 @@ const Contact = () => {
           <div className="lg:col-span-2 space-y-8">
             <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
             <p className="text-gray-600 mb-8">
-              I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+              I'm always open to discussing new projects, creative ideas or
+              opportunities to be part of your visions.
             </p>
 
             <div className="space-y-6">
@@ -71,7 +75,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Email</h4>
-                  <p className="text-gray-600">contact@youremail.com</p>
+                  <p className="text-gray-600">fk284099@gmail.com</p>
                 </div>
               </div>
 
@@ -81,7 +85,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Social</h4>
-                  <p className="text-gray-600">@username</p>
+                  <p className="text-gray-600">@its_khan_070/</p>
                 </div>
               </div>
             </div>
@@ -91,7 +95,10 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Your Name
                   </label>
                   <input
@@ -106,7 +113,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Your Email
                   </label>
                   <input
@@ -122,7 +132,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-1"
+                >
                   Your Message
                 </label>
                 <textarea
