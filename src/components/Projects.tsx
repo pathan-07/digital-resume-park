@@ -100,7 +100,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   return (
     <Link
       to={`/project/${project.id}`}
-      className="group flex flex-col h-full overflow-hidden rounded-xl bg-[#E7ECEF] border border-[#6096BA] hover:border-[#274C77] hover:shadow-lg transition-all reveal"
+      className="group flex flex-col h-full overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-primary/50 hover:shadow-lg transition-all reveal"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       <div className="relative h-48 overflow-hidden">

@@ -7,20 +7,20 @@
 
 @layer base {
   :root {
-    --background: 204 11% 92%;  /* E7ECEF */
-    --foreground: 209 50% 31%;  /* 274C77 */
+    --background: 197 37% 24%;
+    --foreground: 0 0% 100%;
 
-    --card: 209 50% 31%;        /* 274C77 */
-    --card-foreground: 204 11% 92%;  /* E7ECEF */
+    --card: 174 42% 39%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 206 33% 55%;     /* 6096BA */
-    --popover-foreground: 204 11% 92%;  /* E7ECEF */
+    --popover: 174 42% 39%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 209 50% 31%;     /* 274C77 */
-    --primary-foreground: 204 11% 92%;  /* E7ECEF */
+    --primary: 41 54% 66%;
+    --primary-foreground: 197 37% 24%;
 
-    --secondary: 206 33% 55%;   /* 6096BA */
-    --secondary-foreground: 204 11% 92%;  /* E7ECEF */
+    --secondary: 27 56% 67%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -94,20 +94,7 @@
 }
 
 .glass-card {
-  @apply bg-[#274C77]/90 backdrop-blur-md border border-[#6096BA]/30 text-[#E7ECEF] shadow-md hover:shadow-lg transition-all duration-300;
-}
-
-/* Improve text contrast */
-h1, h2, h3, h4, h5, h6 {
-  @apply font-display font-semibold text-[#274C77] dark:text-[#E7ECEF];
-}
-
-p, span, a {
-  @apply text-[#274C77] dark:text-[#E7ECEF];
-}
-
-.text-muted {
-  @apply text-[#8B8C89];
+  @apply bg-[#2A9D8F]/90 backdrop-blur-md border border-[#264653]/30 text-white shadow-md hover:shadow-lg transition-all duration-300;
 }
 
 .reveal {
