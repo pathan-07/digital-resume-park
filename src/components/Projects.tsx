@@ -67,12 +67,22 @@ const projects = [
   },
 ];
 
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveLink?: string;
+  repoLink?: string;
+  ConnectME?: string;
+}
+
 const Projects = () => {
-  const [visibleProjects, setVisibleProjects] = useState(3);
+  const [visibleProjects, setVisibleProjects] = useState<number>(6);
 
   const loadMoreProjects = () => {
-    const newVisibleCount = Math.min(visibleProjects + 3, projects.length);
-    setVisibleProjects(newVisibleCount);
+    setVisibleProjects(prev => Math.min(prev + 6, projects.length));
   };
 
   return (
@@ -96,13 +106,13 @@ const Projects = () => {
           ))}
         </div>
 
-        {visibleProjects < projects.length && (
+        {projects.length > visibleProjects && (
           <div className="mt-12 text-center reveal">
             <button
               onClick={loadMoreProjects}
               className="px-6 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all"
             >
-              Load More Projects
+              Load More Projects ({projects.length - visibleProjects} remaining)
             </button>
           </div>
         )}
