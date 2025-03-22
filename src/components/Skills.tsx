@@ -4,8 +4,8 @@ import { Check, Sparkles } from "lucide-react";
 
 const allSkills = {
   programming: ["JavaScript", "Python", "HTML", "CSS", "C Language", "Git"],
-  aiml: ["Generative AI", "Natural Language Processing", "Predictive Modeling"],
-  webDev: ["React", "Node.js", "MongoDB", "PostgreSQL", "Frontend Development", "Backend Development"],
+  aiml: ["Generative AI", "Natural Language Processing"],
+  webDev: ["Frontend Development", "Backend Development"],
   tools: ["GitHub", "GitHub Copilot", "VS Code", "Cursor AI"]
 };
 
