@@ -30,7 +30,7 @@ const Experience = () => {
           <span className="inline-block px-3 py-1 mb-4 text-sm bg-primary/10 text-primary rounded-full font-medium">
             Experience
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">
             My Professional Journey
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
