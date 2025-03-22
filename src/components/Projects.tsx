@@ -141,7 +141,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
 };
 
 const Projects = () => {
-  const [visibleProjects, setVisibleProjects] = useState(6);
+  const [visibleProjects, setVisibleProjects] = useState(projects.length);
 
   const loadMoreProjects = () => {
     setVisibleProjects((prev) => Math.min(prev + 3, projects.length));
