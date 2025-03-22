@@ -41,9 +41,9 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+      <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm shadow-sm z-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="text-xl font-bold text-primary hover:text-primary/90 transition-colors">Portfolio</Link>
             <div className="flex gap-6">
               <Link to="/" className="text-gray-600 hover:text-primary transition-colors">Home</Link>
