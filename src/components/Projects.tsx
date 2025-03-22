@@ -71,7 +71,10 @@ const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
 
   const loadMoreProjects = () => {
-    setVisibleProjects((prev) => Math.min(prev + 3, projects.length));
+    setVisibleProjects((prev) => {
+      const next = prev + 3;
+      return next >= projects.length ? projects.length : next;
+    });
   };
 
   return (
@@ -101,7 +104,7 @@ const Projects = () => {
               onClick={loadMoreProjects}
               className="px-6 py-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all"
             >
-              Load More Projects
+              Load More ({projects.length - visibleProjects} remaining)
             </button>
           </div>
         )}
