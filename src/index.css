@@ -6,20 +6,20 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 204 11% 92%;  /* E7ECEF */
+    --foreground: 209 50% 31%;  /* 274C77 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 209 50% 31%;        /* 274C77 */
+    --card-foreground: 204 11% 92%;  /* E7ECEF */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 206 33% 55%;     /* 6096BA */
+    --popover-foreground: 204 11% 92%;  /* E7ECEF */
 
-    --primary: 210 100% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 209 50% 31%;     /* 274C77 */
+    --primary-foreground: 204 11% 92%;  /* E7ECEF */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 206 33% 55%;   /* 6096BA */
+    --secondary-foreground: 204 11% 92%;  /* E7ECEF */
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -98,7 +98,7 @@
 }
 
 .glass-card {
-  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  @apply bg-[#6096BA]/80 backdrop-blur-md border border-[#274C77]/30 text-[#E7ECEF] shadow-sm hover:shadow-lg transition-all duration-300;
 }
 
 .reveal {
