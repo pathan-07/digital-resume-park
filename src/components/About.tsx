@@ -1,4 +1,3 @@
-
 import { GraduationCap, Briefcase, Award } from "lucide-react";
 
 const About = () => {
@@ -20,13 +19,19 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center reveal">
           <div className="space-y-6">
             <p className="text-gray-600">
-              I am a data scientist and software developer with expertise in building web applications and data analysis tools. My passion lies in transforming complex data into intuitive, user-friendly interfaces that help people make informed decisions.
+              Hello Everyone! My name is Faizan, and I am currently pursuing a Bachelor of Engineering in Computer Science from the Shree Swaminarayan Institute of Technology, affiliated with Gujarat Technological University.
             </p>
             <p className="text-gray-600">
-              With a background in machine learning and software development, I specialize in creating applications that bridge the gap between sophisticated algorithms and accessible user experiences.
+              I have had the privilege of interning at Scaler School of Technology's Young Innovators Internship Program 2.0, where I gained hands-on experience in innovative solutions. Additionally, I joined TechSaksham's AI: Transformative Learning Internship, a joint initiative by Microsoft, SAP, AICTE and Edunet Foundation where I developed AI-driven project prototypes under the guidance of industry experts and earned certifications in cutting-edge technologies.
             </p>
             <p className="text-gray-600">
-              I'm constantly learning and exploring new technologies to stay at the forefront of innovation in the rapidly evolving tech landscape.
+              The field of Artificial Intelligence fascinates me, especially with the rapid advancements brought by tools like ChatGPT-4 and Gemini, which surpass their predecessors. Exploring how these innovations transform our lives fuels my curiosity.
+            </p>
+            <p className="text-gray-600">
+              Beyond AI, I am deeply interested in Quantum Mechanics and The Theory of Relativity. I often ponder how these groundbreaking theories will reshape our understanding of the universe and influence the future.
+            </p>
+            <p className="text-gray-600">
+              I aspire to continue growing as a professional engineer, contributing to technological advancements that redefine possibilities.
             </p>
           </div>
 
@@ -38,7 +43,7 @@ const About = () => {
               <div>
                 <h3 className="font-medium text-lg">Education</h3>
                 <p className="text-gray-600">
-                  Bachelor's in Computer Science, with specialization in Data Science
+                  Bachelor of Engineering in Computer Science, Shree Swaminarayan Institute of Technology (GTU)
                 </p>
               </div>
             </div>
@@ -50,7 +55,7 @@ const About = () => {
               <div>
                 <h3 className="font-medium text-lg">Experience</h3>
                 <p className="text-gray-600">
-                  3+ years developing web applications and data visualization tools
+                  Intern at Scaler School of Technology and TechSaksham's AI Transformative Learning Program
                 </p>
               </div>
             </div>

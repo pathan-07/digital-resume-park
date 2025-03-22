@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 
@@ -27,10 +26,13 @@ const Hero = () => {
             SSIT'27
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Creating elegant digital experiences
+            Hello, I'm Faizan
           </h1>
+          <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+            Computer Science Engineering student fascinated by AI, with internship experience at Scaler School of Technology and Microsoft's TechSaksham program.
+          </p>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-           I aspire to continue growing as a professional engineer, contributing to technological advancements that redefine possibilities.
+            I'm passionate about exploring how AI transforms our lives and aspire to contribute to technological advancements that redefine possibilities.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
