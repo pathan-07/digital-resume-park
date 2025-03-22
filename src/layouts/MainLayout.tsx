@@ -46,7 +46,13 @@ const MainLayout = ({ children }: MainLayoutProps) => {
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="text-xl font-bold text-primary hover:text-primary/90 transition-colors">Portfolio</Link>
             <div className="flex gap-6">
-              <Link to="/" className="text-gray-600 hover:text-primary transition-colors">Home</Link>
+              <Link 
+                to="/" 
+                className="text-gray-600 hover:text-primary transition-colors"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
+                Home
+              </Link>
               <a 
                 href="#projects" 
                 onClick={(e) => handleSmoothScroll(e, 'projects')}
