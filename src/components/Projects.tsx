@@ -71,7 +71,8 @@ const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
 
   const loadMoreProjects = () => {
-    setVisibleProjects(prev => prev + 3);
+    const newVisibleCount = Math.min(visibleProjects + 3, projects.length);
+    setVisibleProjects(newVisibleCount);
   };
 
   return (
