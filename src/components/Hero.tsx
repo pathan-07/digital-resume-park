@@ -22,16 +22,16 @@ const Hero = () => {
         }`}
       >
         <div className="order-2 lg:order-1">
-          <span className="inline-block px-3 py-1 mb-4 text-sm bg-primary/10 text-primary rounded-full font-medium">
+          <span className="inline-block px-3 py-1 mb-4 text-sm bg-primary/10 text-white rounded-full font-medium">
             SSIT'27
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
             Hello, I'm Faizan
           </h1>
-          <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+          <p className="text-lg text-white mb-4 leading-relaxed">
             Computer Science Engineering student fascinated by AI, with internship experience at Scaler School of Technology and Microsoft's TechSaksham program.
           </p>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p className="text-lg text-white mb-8 leading-relaxed">
             I'm passionate about exploring how AI transforms our lives and aspire to contribute to technological advancements that redefine possibilities.
           </p>
           <div className="flex flex-wrap gap-4">
