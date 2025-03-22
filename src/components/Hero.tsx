@@ -24,13 +24,13 @@ const Hero = () => {
       >
         <div className="order-2 lg:order-1">
           <span className="inline-block px-3 py-1 mb-4 text-sm bg-primary/10 text-primary rounded-full font-medium">
-            Software Developer
+            SSIT'27
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Creating elegant digital experiences
           </h1>
           <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            I'm a passionate software developer focused on building beautiful, functional, and user-friendly applications with clean code and modern technologies.
+           I aspire to continue growing as a professional engineer, contributing to technological advancements that redefine possibilities.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -53,7 +53,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-primary/10 rounded-3xl -rotate-6 transform-gpu"></div>
             <div className="relative overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
               <img
-                src="/lovable-uploads/36122a35-f3f7-4d56-b6b0-5499d8a39290.png"
+                src="/uploads/profile.jpg"
                 alt="Profile"
                 className="w-full h-auto object-cover aspect-[4/5] max-w-[320px]"
                 loading="lazy"

@@ -18,7 +18,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/yourusername" 
+                href="https://github.com/pathan-07" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
@@ -27,7 +27,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/in/yourusername" 
+                href="https://linkedin.com/in/pathan-mo-faizan-khan" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
@@ -36,7 +36,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://twitter.com/yourusername" 
+                href="https://x.com/its_khan_070" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a 
-                href="https://instagram.com/yourusername" 
+                href="https://instagram.com/its_khan_070" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="mailto:contact@youremail.com" 
+                href="mailto:fk284099@gmail.com" 
                 className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition-colors"
                 aria-label="Email"
               >
@@ -91,13 +91,13 @@ const Footer = () => {
 
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <p className="text-gray-400 mb-2">Email: contact@youremail.com</p>
-            <p className="text-gray-400">Location: City, Country</p>
+            <p className="text-gray-400 mb-2">Email: fk284099@gmail.com</p>
+            <p className="text-gray-400">Location: Ahmedabad, India</p>
           </div>
         </div>
 
         <div className="pt-8 border-t border-gray-800 text-center text-gray-500">
-          <p>&copy; {currentYear} Your Name. All rights reserved.</p>
+          <p>&copy; {currentYear} Patha Mo. Faizan Khan. All rights reserved.</p>
         </div>
       </div>
     </footer>

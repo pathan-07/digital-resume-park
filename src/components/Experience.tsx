@@ -1,49 +1,22 @@
-
 import { useState } from "react";
 import { Briefcase, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    company: "Data Insights Tech",
-    position: "Senior Data Scientist",
-    duration: "2022 - Present",
-    description:
-      "Led the development of predictive analytics tools for healthcare applications, improving diagnostic accuracy by 35%. Designed and implemented data visualization dashboards for client reporting.",
-    skills: ["Python", "TensorFlow", "Data Visualization", "React"],
-  },
-  {
-    company: "Web Solutions Inc.",
-    position: "Full Stack Developer",
-    duration: "2020 - 2022",
-    description:
-      "Developed responsive web applications using React and Node.js. Created RESTful APIs and implemented database solutions using MongoDB and PostgreSQL.",
-    skills: ["JavaScript", "React", "Node.js", "MongoDB", "PostgreSQL"],
-  },
-  {
-    company: "Scaler School of Technology",
-    position: "Software Development Intern",
-    role: "Freelance Internship",
+    company: "SST - School of Technology",
+    position: "Freelance Internship",
     duration: "June 2024 - October 2024",
     description:
       "Developed my own portfolio without code for showcasing my skills and learnings. Also developed a Chrome Extension and worked on personal branding on LinkedIn.",
-    skills: ["React", "Node.js", "JavaScript", "Git", "Agile"],
+    skills: ["Canva", "No Code Website Builder", "Digital Marketing", "Graphics Designing", "Branding", "Json", "AI for Business", "Generative AI", "Prompt Engineering"],
   },
   {
     company: "Edunet Foundation",
-    position: "AI Intern",
-    role: "AI Transformative Learning with TechSaksham",
+    position: "AI: Transformative Learning with TechSaksham",
     duration: "December 2024 - January 2025",
     description:
       "Focused on research and development of AI-driven solutions, particularly in natural language processing and predictive modeling. Gained experience in deploying models to production and fine-tuning for real-world applications.",
-    skills: ["Python", "Natural Language Processing", "Predictive Modeling", "Machine Learning"],
-  },
-  {
-    company: "ML Research Lab",
-    position: "Machine Learning Intern",
-    duration: "2019 - 2020",
-    description:
-      "Assisted in developing machine learning models for image classification. Implemented data preprocessing pipelines and conducted model evaluation experiments.",
-    skills: ["Python", "Scikit-learn", "Pandas", "Image Processing"],
+    skills: ["Python", "Natural Language Processing", "Predictive Modeling", "Machine Learning", "NLTK", "Natural Language Toolkit", "Data Visualization", "Data Cleaning", "Data Analysis", "Data Preprocessing"],
   },
 ];
 
@@ -96,16 +69,6 @@ const Experience = () => {
                 <h3 className="text-2xl font-bold mb-4">
                   {exp.position}
                 </h3>
-                
-                {exp.role && (
-                  <div className="mb-4 flex items-start">
-                    <Briefcase className="mr-2 text-primary h-5 w-5 mt-1" />
-                    <div>
-                      <span className="font-semibold text-white/80">Role:</span>{" "}
-                      <span>{exp.role}</span>
-                    </div>
-                  </div>
-                )}
                 
                 <div className="mb-6 flex items-start">
                   <Calendar className="mr-2 text-primary h-5 w-5 mt-1" />

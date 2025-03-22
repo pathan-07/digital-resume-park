@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
@@ -11,8 +10,9 @@ interface Project {
   description: string;
   image: string;
   tags: string[];
-  liveLink: string;
-  repoLink: string;
+  liveLink?: string;
+  repoLink?: string;
+  ConnectME?: string;
 }
 
 // Demo project data - in a real app, you would fetch this from an API or database
@@ -20,38 +20,64 @@ const projects: Project[] = [
   {
     id: "diabetes-prediction",
     title: "Diabetes Prediction App",
-    description: "A machine learning application that predicts the likelihood of diabetes based on health parameters. The app uses a logistic regression model trained on a dataset of patient health metrics to provide predictions with high accuracy. Users can input their health parameters and receive immediate feedback about their diabetes risk.",
-    image: "/lovable-uploads/7580f279-c120-4664-abba-111b61c18a75.png",
-    tags: ["Python", "Machine Learning", "Data Visualization", "Flask"],
-    liveLink: "https://first-python-project-xgrl.onrender.com",
-    repoLink: "https://github.com/username/diabetes-prediction",
+    description: "This project involves building a predictive model to diagnose diabetes based on various health metrics. The model uses logistic regression to classify individuals as diabetic or non-diabetic based on their medical attributes.",
+    image: "/lovable-uploads/diabeteies.png",
+    tags: ["Python", "Machine Learning", "Data Visualization"],
+    liveLink: "https://first-python-project.onrender.com",
+    repoLink: "https://github.com/pathan-07/first-python-project",
   },
   {
     id: "car-price-prediction",
     title: "Car Price Prediction Model",
-    description: "A data analysis tool that predicts car prices based on various features and market trends. This project leverages advanced regression techniques to analyze historical car pricing data and identify key factors influencing market values. The interactive interface allows users to explore how different features affect car pricing.",
-    image: "/lovable-uploads/904be275-398a-4a6f-a408-1a1672af4774.png",
-    tags: ["Data Analysis", "Machine Learning", "Python", "Streamlit"],
-    liveLink: "https://car-price-prediction-model-6g5r.onrender.com",
-    repoLink: "https://github.com/username/car-price-prediction",
+    description: "A data analysis tool that predicts car prices based on various features and market trends.",
+    image: "/lovable-uploads/car.png",
+    tags: ["Data Analysis", "Machine Learning", "Python"],
+    liveLink: "https://car-price-prediction-model.onrender.com",
+    repoLink: "https://github.com/pathan-07/car-price-prediction-model",
   },
   {
     id: "ipl-predictor",
     title: "IPL Win Predictor",
-    description: "A sports analytics application that predicts cricket match outcomes using historical data. Using a combination of statistical models and machine learning algorithms, this tool analyzes past match data, player performance metrics, and venue statistics to forecast match results. The interactive dashboard provides real-time prediction updates as match conditions change.",
-    image: "/lovable-uploads/bd6b089d-09b1-4bc2-9d25-461d0960a199.png",
-    tags: ["Sports Analytics", "Data Science", "Python", "Web Application"],
-    liveLink: "https://ipl-prediction-model.onrender.com",
-    repoLink: "https://github.com/username/ipl-predictor",
+    description: "The IPL Win Predictor Model predicts the outcomes of Indian Premier League (IPL) matches using historical data and real-time match information. It provides accurate win probabilities for competing teams with dynamic visualizations and accurate data analysis.",
+    image: "/lovable-uploads/ipl.png",
+    tags: ["Streamlit", "Data Science", "Python", "Machine Learning"],
+    liveLink: "https://ipl-prediction-model-.onrender.com",
+    repoLink: "https://github.com/pathan-07/ipl-prediction-model-",
   },
   {
     id: "breast-cancer-detection",
     title: "Breast Cancer Detection Model",
-    description: "A medical imaging analysis tool for early detection of breast cancer using machine learning. This project implements a convolutional neural network trained on a dataset of mammogram images to classify suspicious tissue formations. The model achieves high accuracy in identifying malignant tumors, potentially aiding early diagnosis.",
-    image: "/lovable-uploads/3f1b9188-cec5-491b-b6b3-2a85404a3d49.png",
-    tags: ["Healthcare", "Machine Learning", "Image Analysis", "Python"],
-    liveLink: "https://breast-cancer-detection.onrender.com",
-    repoLink: "https://github.com/username/breast-cancer-detection",
+    description: "Developed and deployed a deep learning model for breast cancer detection using TensorFlow. The model leverages key features to predict malignancy with high accuracy, though deployment on Render's free tier presented challenges due to VRAM limitations.",
+    image: "/lovable-uploads/cancer.png",
+    tags: ["Healthcare", "Machine Learning", "Image Analysis"],
+    liveLink: "https://cancer-prediction-model.onrender.com",
+    repoLink: "https://github.com/pathan-07/cancer-prediction-model",
+  },
+  {
+    id: "Chrome Extension",
+    title: "Chrome Plugin (Extension)",
+    description: "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
+    image: "/lovable-uploads/chrome.png",
+    tags: ["Chrome Extension", "Web Development", "JavaScript"],
+    liveLink: "https://github.com/pathan-07/time-Tracker-Chrome-Plug-in-",
+    repoLink: "https://github.com/pathan-07/time-Tracker-Chrome-Plug-in-",
+  },
+  {
+    id: "Marketing 101",
+    title: "Marketing 101",
+    description: "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
+    image: "/lovable-uploads/market.png",
+    tags: ["Canva", "Graphics", "Design"],
+    ConnectME: "https://www.linkedin.com/in/pathan-mo-faizan-khan/",
+  },
+  {
+    id: "Sms Spam Detection",
+    title: "SMS SPAM DETECTION Using NLP",
+    description: "Developed an AI-powered SMS spam detection system that leverages Natural Language Processing and TF-IDF vectorization to accurately classify messages as spam or legitimate. The project features a secure web interface with registration and OTP-based login to ensure robust user authentication.",
+    image: "/lovable-uploads/nlp.png",
+    tags: ["Python", "NLTK", "NLP", "Web Application" , "HTML", "CSS", "JavaScript"],
+    liveLink: "https://SMS-SPAM-DETECTION-USING-NLP.onrender.com",
+    repoLink: "https://github.com/pathan-07/SMS-SPAM-DETECTION-USING-NLP",
   },
 ];
 
