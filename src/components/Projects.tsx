@@ -1,6 +1,20 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
+interface ProjectCardProps {
+  project: {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    tags: string[];
+    liveLink?: string;
+    repoLink?: string;
+    ConnectME?: string;
+  };
+  index: number;
+}
 
 const projects = [
   {
@@ -47,7 +61,7 @@ const projects = [
     id: "Chrome Extension",
     title: "Chrome Plugin (Extension)",
     description:
-      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
+      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.",
     image: "/uploads/c1.png",
     tags: ["Chrome Extension", "Web Development", "JavaScript"],
     liveLink: "https://github.com/pathan-07/time-Tracker-Chrome-Plug-in-",
@@ -57,57 +71,7 @@ const projects = [
     id: "Marketing 101",
     title: "Marketing 101",
     description:
-      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
-    image: "/uploads/market.jpeg",
-    tags: ["Canva", "Graphics", "Design"],
-    ConnectME: "https://www.linkedin.com/in/pathan-mo-faizan-khan/",
-  },
-  {
-    id: "Sms Spam Detection",
-    title: "SMS SPAM DETECTION Using NLP",
-    description:
-      "Developed an AI-powered SMS spam detection system that leverages Natural Language Processing and TF-IDF vectorization to accurately classify messages as spam or legitimate. The project features a secure web interface with registration and OTP-based login to ensure robust user authentication.",
-    image: "/uploads/nlp.png",
-    tags: [
-      "Python",
-      "NLTK",
-      "NLP",
-      "Web Application",
-      "HTML",
-      "CSS",
-      "JavaScript",
-    ],
-    liveLink: "https://sms-spam-detect.onrender.com",
-    repoLink: "https://github.com/pathan-07/SMS-SPAM-DETECTION-USING-NLP",
-  },
-];
-    repoLink: "https://github.com/pathan-07/ipl-prediction-model-",
-  },
-  {
-    id: "breast-cancer-detection",
-    title: "Breast Cancer Detection Model",
-    description:
-      "Developed and deployed a deep learning model for breast cancer detection using TensorFlow. The model leverages key features to predict malignancy with high accuracy, though deployment on Render's free tier presented challenges due to VRAM limitations.",
-    image: "/uploads/cancer.png",
-    tags: ["Healthcare", "Machine Learning", "Image Analysis"],
-    liveLink: "https://cancer-prediction-model.onrender.com",
-    repoLink: "https://github.com/pathan-07/cancer-prediction-model",
-  },
-  {
-    id: "Chrome Extension",
-    title: "Chrome Plugin (Extension)",
-    description:
-      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
-    image: "/uploads/c1.png",
-    tags: ["Chrome Extension", "Web Development", "JavaScript"],
-    liveLink: "https://github.com/pathan-07/time-Tracker-Chrome-Plug-in-",
-    repoLink: "https://github.com/pathan-07/time-Tracker-Chrome-Plug-in-",
-  },
-  {
-    id: "Marketing 101",
-    title: "Marketing 101",
-    description:
-      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.ies.",
+      "The Time Tracker Chrome Extension helps users monitor and manage their time spent on various websites. It tracks active tab usage in real-time and provides detailed reports to improve productivity and digital wellbeing.",
     image: "/uploads/market.jpeg",
     tags: ["Canva", "Graphics", "Design"],
     ConnectME: "https://www.linkedin.com/in/pathan-mo-faizan-khan/",
@@ -132,46 +96,81 @@ const projects = [
   },
 ];
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  liveLink?: string;
-  repoLink?: string;
-  ConnectME?: string;
-}
+const ProjectCard = ({ project, index }: ProjectCardProps) => {
+  return (
+    <Link
+      to={`/project/${project.id}`}
+      className="group flex flex-col h-full overflow-hidden rounded-xl bg-white border border-gray-200 hover:border-primary/50 hover:shadow-lg transition-all reveal"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+      </div>
+      <div className="flex flex-col flex-grow p-4">
+        <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+          {project.title}
+        </h3>
+        <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
+        <div className="mt-auto">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+            {project.tags.length > 3 && (
+              <span className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full">
+                +{project.tags.length - 3} more
+              </span>
+            )}
+          </div>
+          <div className="flex items-center text-primary group-hover:gap-2 transition-all">
+            View Project <ArrowRight size={16} className="ml-1" />
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+};
 
 const Projects = () => {
-  const [visibleProjects, setVisibleProjects] = useState<number>(3);
+  const [visibleProjects, setVisibleProjects] = useState(6);
 
   const loadMoreProjects = () => {
     setVisibleProjects((prev) => Math.min(prev + 3, projects.length));
   };
 
-  return (
-    <section id="projects" className="py-20 px-4 bg-gray-50">
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-16 reveal">
-          <span className="inline-block px-3 py-1 mb-4 text-sm bg-primary/10 text-primary rounded-full font-medium">
-            Projects
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My Latest Work
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore my recent projects that showcase my skills and expertise in
-            and Different Technologies.
-          </p>
-        </div>
+  useEffect(() => {
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    });
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    revealElements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, [visibleProjects]);
+
+  return (
+    <section id="projects" className="py-20">
+      <div className="container px-4 mx-auto">
+        <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.slice(0, visibleProjects).map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
-
         {projects.length > visibleProjects && (
           <div className="mt-12 text-center reveal">
             <button
@@ -184,95 +183,6 @@ const Projects = () => {
         )}
       </div>
     </section>
-  );
-};
-
-interface ProjectCardProps {
-  project: {
-    id: string;
-    title: string;
-    description: string;
-    image: string;
-    tags: string[];
-    liveLink?: string;
-    repoLink?: string;
-    ConnectME?: string;
-  };
-  index: number;
-}
-
-const ProjectCard = ({ project, index }: ProjectCardProps) => {
-  return (
-    <div
-      className="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 reveal"
-      style={{ transitionDelay: `${index * 100}ms` }}
-    >
-      <div className="h-48 overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-          loading="lazy"
-        />
-      </div>
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-          <Link
-            to={`/project/${project.id}`}
-            className="text-primary hover:text-primary/80 font-medium"
-          >
-            View Details
-          </Link>
-          <div className="flex gap-3">
-            {project.liveLink && (
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors"
-                aria-label="Live Demo"
-              >
-                <ExternalLink size={18} />
-              </a>
-            )}
-            {project.repoLink && (
-              <a
-                href={project.repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors"
-                aria-label="GitHub Repository"
-              >
-                <Github size={18} />
-              </a>
-            )}
-            {project.ConnectME && (
-              <a
-                href={project.ConnectME}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors"
-                aria-label="Connect on LinkedIn"
-              >
-                <ExternalLink size={18} />
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 
