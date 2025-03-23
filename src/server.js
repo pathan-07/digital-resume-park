@@ -1,7 +1,12 @@
-
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
+// Add these debug lines at the top of your server.js file
+console.log("Email config:");
+console.log("User:", process.env.EMAIL_USER);
+console.log("Pass exists:", !!process.env.EMAIL_PASS);
 
 const app = express();
 const port = 3000;
@@ -23,6 +28,9 @@ app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
   
   try {
+    console.log("Attempting to send email...");
+    console.log("From:", process.env.EMAIL_USER);
+    
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
@@ -30,9 +38,10 @@ app.post('/api/contact', async (req, res) => {
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
     
+    console.log("Email sent successfully");
     res.json({ success: true, message: 'Message sent successfully!' });
   } catch (error) {
-    console.error('Email error:', error);
+    console.error('Email error details:', error);
     res.status(500).json({ success: false, message: 'Failed to send message' });
   }
 });

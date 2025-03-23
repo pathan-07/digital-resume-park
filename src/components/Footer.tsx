@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Mail, Twitter, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -64,7 +63,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#about" className="text-gray-400 hover:text-white transition-colors">
@@ -90,7 +89,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
             <p className="text-gray-400 mb-2">Email: fk284099@gmail.com</p>
             <p className="text-gray-400">Location: Ahmedabad, India</p>
           </div>

@@ -81,7 +81,7 @@ const projects: Project[] = [
     title: "SMS SPAM DETECTION Using NLP",
     description:
       "Developed an AI-powered SMS spam detection system that leverages Natural Language Processing and TF-IDF vectorization to accurately classify messages as spam or legitimate. The project features a secure web interface with registration and OTP-based login to ensure robust user authentication.",
-    image: "uploads/nlp.png",
+    image: "/uploads/nlp.png",
     tags: [
       "Python",
       "NLTK",
@@ -145,11 +145,11 @@ const ProjectDetail = () => {
 
   return (
     <MainLayout>
-      <div className="pt-24 pb-20 px-4">
+      <div className="pt-24 pb-20 px-4 bg-gray-900"> {/* Added dark background */}
         <div className="container mx-auto max-w-5xl">
           <Link
             to="/#projects"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-primary mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-white hover:text-primary mb-8 transition-colors"
           >
             <ArrowLeft size={16} /> Back to Projects
           </Link>
@@ -163,7 +163,7 @@ const ProjectDetail = () => {
               />
             </div>
 
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-white">
               {project.title}
             </h1>
 
@@ -171,7 +171,7 @@ const ProjectDetail = () => {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                  className="px-3 py-1 bg-primary/10 text-white text-sm rounded-full"
                 >
                   {tag}
                 </span>
@@ -181,20 +181,20 @@ const ProjectDetail = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <h2 className="text-2xl font-semibold mb-4 text-white">Project Overview</h2>
+              <p className="text-white mb-8 leading-relaxed">
                 {project.description}
               </p>
 
-              <h2 className="text-2xl font-semibold mb-4">Technologies Used</h2>
-              <ul className="list-disc list-inside mb-8 text-gray-600 space-y-2">
+              <h2 className="text-2xl font-semibold mb-4 text-white">Technologies Used</h2>
+              <ul className="list-disc list-inside mb-8 text-white space-y-2">
                 {project.tags.map((tech) => (
                   <li key={tech}>{tech}</li>
                 ))}
               </ul>
 
-              <h2 className="text-2xl font-semibold mb-4">Features</h2>
-              <ul className="list-disc list-inside mb-8 text-gray-600 space-y-2">
+              <h2 className="text-2xl font-semibold mb-4 text-white">Features</h2>
+              <ul className="list-disc list-inside mb-8 text-white space-y-2">
                 <li>Interactive data visualization</li>
                 <li>Responsive design for all devices</li>
                 <li>Real-time prediction capabilities</li>
@@ -203,8 +203,8 @@ const ProjectDetail = () => {
             </div>
 
             <div>
-              <div className="bg-gray-50 rounded-xl p-6 sticky top-24">
-                <h2 className="text-xl font-semibold mb-4">Project Links</h2>
+              <div className="bg-gray-800 rounded-xl p-6 sticky top-24"> {/* Changed to dark background */}
+                <h2 className="text-xl font-semibold mb-4 text-white">Project Links</h2>
                 <div className="space-y-4">
                   <a
                     href={project.liveLink}
@@ -219,7 +219,7 @@ const ProjectDetail = () => {
                     href={project.repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors w-full"
+                    className="flex items-center gap-3 px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition-colors w-full text-white"
                   >
                     <Github size={18} />
                     View Source Code

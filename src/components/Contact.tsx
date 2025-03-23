@@ -62,7 +62,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 reveal">
           <div className="lg:col-span-2 space-y-8">
-            <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-black">Let's Connect</h3>
             <p className="text-gray-600 mb-8">
               I'm always open to discussing new projects, creative ideas or
               opportunities to be part of your visions.
@@ -85,7 +85,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Social</h4>
-                  <p className="text-gray-600">@its_khan_070/</p>
+                  <p className="text-gray-600">@its_khan_070</p>
                 </div>
               </div>
             </div>
